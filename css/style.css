@@ -107,7 +107,7 @@ body{
 
     100%{
         left: 0;
-        width: 50%;
+        width: 100%;
         height: 100%;
         border-radius: 0;
     }
@@ -610,6 +610,43 @@ header .container img{
     line-height: 40px;
     font-size: 1.6rem;
     color: var(--dark-gray);
+}
+
+.about .container .count{
+    width: 96%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    place-items: center;
+    margin: 100px auto 0;
+}
+
+.about .container .count > .box{
+    /* width: 150px; */
+    /* height: 200px; */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+}
+
+
+.about .container .count > .box > i{
+    color: var(--light-gray);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.about .container .count > .box h3{
+    color: var(--main-color);
+    text-align: center;
+    font-size: 2rem;
+}
+.about .container .count > .box span{
+    color: var(--light-gray);
+    font-size: 1.2rem;
 }
 
 
