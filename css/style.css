@@ -18,18 +18,28 @@ input, button, textarea{
 
 :root{
     --white: #FFF;
+    /* --white: #eaeaea; */
+    --yellow: #ffff58;
     --black: #000;
     --dark-gray: #333;
+    /* --dark-gray: #fff; */
     --paragraph-gray: #555;
+    /* --paragraph-gray: #eaeaea; */
+    --projects-paragraph: #333;
+    --skills-gray: #777;
     --light-gray: #777;
+    /* --light-gray: #efefef; */
     --main-color: #d52d40;
     --hover-color: #ec001c;
     /* --main-color: rgb(0, 158, 119); */
     /* --section-gray: #FFF; */
     --section-gray: #efefef;
+    /* --section-gray: #333; */
+    --mode-btn-bg: #777;
     --skills-box: #FFF;
     --skills-progress-bg: #CCC;
     --input-border-bottom: #999;
+    --contact-links-gray: #333;
     --border-radius: 6px;
     --box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 
     0px 2px 4px 0px rgb(0 0 0 / 12%);
@@ -132,7 +142,41 @@ body{
     background-color: #eb1730;
 }
 
+/* Start dark/ light mode button */
 
+.modeBtn{
+    position: fixed;
+    z-index: 9;
+    bottom: 5px;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border-radius: var(--border-radius);
+    background-color: var(--mode-btn-bg);
+    /* opacity: 0.2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(10px); */
+}
+
+.modeBtn > button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.modeBtn > button i{
+    font-size: 1.8rem;
+    color: var(--yellow);
+}
+
+
+/* End dark/ light mode button */
 
 .container{
     width: 100%;
@@ -441,7 +485,8 @@ header .container img{
 }
 .projects .container .box p{
     font-size: 1rem;
-    color: var(--paragraph-gray);
+    /* color: var(--paragraph-gray); */
+    color: var(--projects-paragraph);
     line-height: 22px;
     margin-top: 16px;
     margin-bottom: 25px;
@@ -504,7 +549,7 @@ header .container img{
 
 .skills .container .box i{
     font-size: 6rem;
-    color: var(--light-gray);
+    color: var(--skills-gray);
 }
 
 .skills .container .box .title{
@@ -519,7 +564,7 @@ header .container img{
 
 .skills .container .box .title h3{
     font-size: 1.5rem;
-    color: var(--light-gray);
+    color: var(--skills-gray);
 }
 .skills .container .box .title span{
     display: block;
@@ -771,7 +816,7 @@ header .container img{
 }
 
 .contact .container .socials .wrapper span{
-    color: var(--paragraph-gray);
+    color: var(--contact-links-gray);
     font-size: 1.2rem;
     word-wrap: break-word;
 }
@@ -826,10 +871,15 @@ footer .container .box p{
 }
 
 @media (min-width: 640px){
+
     .container{
         max-width: 640px;
     }
 
+    .modeBtn{
+        bottom: 40px;
+        right: 30px;
+    }
     nav .container .box{
         width: 50%;
         display: flex;
