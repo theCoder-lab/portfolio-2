@@ -19,6 +19,7 @@ const enableLightMode = () => {
 
 document.querySelector('.modeBtn').innerHTML = '<button id="toggleMode" data-mode="dark"><i class="fa-solid fa-moon"></i></button>';
 
+//functions triggers by clicking a button
 let toggle = document.getElementById('toggleMode');
 toggle.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -36,7 +37,7 @@ toggle.addEventListener('click', (e)=>{
         toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
 });
-
+//when page new loads or by reloading the page
 const localMode = localStorage.getItem('mode');
 if(localMode === 'dark'){
     enableDarkMode();

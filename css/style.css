@@ -19,6 +19,7 @@ input, button, textarea{
 :root{
     --white: #FFF;
     /* --white: #eaeaea; */
+    --main-gray: #333;
     --yellow: #ffff58;
     --black: #000;
     --dark-gray: #333;
@@ -149,16 +150,15 @@ body{
     z-index: 9;
     bottom: 5px;
     right: 5px;
-    width: 45px;
-    height: 45px;
-    padding: 5px;
-    border-radius: var(--border-radius);
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
     background-color: var(--mode-btn-bg);
-    /* opacity: 0.2; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* backdrop-filter: blur(10px); */
+    opacity: .6;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .modeBtn > button{
@@ -177,6 +177,35 @@ body{
 
 
 /* End dark/ light mode button */
+
+/* Start Go up button */
+.goUp {
+      display: none;
+      position: fixed;
+      z-index: 9;
+      bottom: 60px;
+      right: 5px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+/*       display: grid;
+      place-items: center; */
+      border-radius: 100%;
+      background-color: var(--mode-btn-bg);
+      opacity: .9;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0.5;
+      
+    }
+
+    .goUp > i{
+        font-size: 1.3rem;
+        color: var(--white);
+    }
+/* End Go up button */
+
 
 .container{
     width: 100%;
@@ -880,6 +909,13 @@ footer .container .box p{
         bottom: 40px;
         right: 30px;
     }
+
+    .goUp{
+        display: none;
+        bottom: 100px;
+        right: 30px;
+    }
+
     nav .container .box{
         width: 50%;
         display: flex;

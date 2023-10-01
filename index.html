@@ -7,7 +7,6 @@
     <meta name="author" content="Jan Darwish">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/fontawesome.min.css" />
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/devicon.min.css">
@@ -17,8 +16,8 @@
     src="js/kit.fontawesome.com_4cc7e1b55d.js"
     crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="modeBtn"></div>  
+<body id="top">
+
     <div id="hidden-menu" class="hidden-menu">
         <div class="container">
 
@@ -300,7 +299,10 @@
             </div>
         </div>
     </footer>
-
+    <a id="goUp" href="#top" class="goUp">
+        <i class="fa-solid fa-circle-up"></i>
+    </a>
+    <div id="modeBtn" class="modeBtn"></div>  
     <script src="js/jquery-min.js"></script>
     <script> 
       $(document).ready(function () {
@@ -310,16 +312,21 @@
             $("#hidden-menu").toggle(200);
             $('.line').toggleClass('line-close');
         });
-
+        
+        /* $('#goUp').hide(); */
         $(window).scroll(function(){
 
             let sectionOffset = $("#section-offset").offset().top;
             let scrollPosition = $(window).scrollTop();
 
             if(scrollPosition > 100){
-                $('nav').css({background: 'var(--section-gray)', opacity: '0.8'});
+                $('nav').css({background: 'var(--section-gray)', opacity: '0.8',backdropFilter: 'blur(10px)'});
+                $('#goUp').fadeIn(1000);
+                /* $('#modeBtn').fadeIn(1000); */
             }else{
                 $('nav').css({background: 'var(--section-gray)', opacity: '1'});
+                $('#goUp').fadeOut(1000);
+                /* $('#modeBtn').fadeOut(1000); */
             }
         });
       });
